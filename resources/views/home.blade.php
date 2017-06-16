@@ -12,6 +12,16 @@
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           {{ session('failed') }}
       </div>
+    @elseif (session('update'))
+      <div class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{ session('update') }}
+      </div>
+    @elseif (session('delete'))
+      <div class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{ session('delete') }}
+      </div>
     @endif
     <div class="row">
         @include('layouts.sidenav')

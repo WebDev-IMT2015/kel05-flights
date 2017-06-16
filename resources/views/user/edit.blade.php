@@ -13,6 +13,7 @@
                         {{ csrf_field() }}
 
                         <input type="hidden" id="id" name="id" value="{{ $user_edit->id }}">
+                        
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 

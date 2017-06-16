@@ -38,7 +38,11 @@ class FlightController extends Controller
         	$flight = new Flight;
 
 	    	$departure_time = DateTime::createFromFormat('d-m-Y H:i', $request->input('departure'))->format('Y-m-d H:i');
-	    	$arrival_time = DateTime::createFromFormat('d-m-Y H:i', $request->input('arrival'))->format('Y-m-d H:i');
+            $departure_time .= ':00';
+	    	
+            $arrival_time = DateTime::createFromFormat('d-m-Y H:i', $request->input('arrival'))->format('Y-m-d H:i');
+            $arrival_time .= ':00'; 
+
 	    	$flight->flight_code = $request->input('code');
 	    	$flight->flight_source = $request->input('source');
 	    	$flight->flight_destination = $request->input('destination');
@@ -50,5 +54,44 @@ class FlightController extends Controller
 	    	
 	    	return redirect('home')->with('success', 'berhasil ditambahkan');
         }    	
+    }
+
+    public function edit($id)
+    {
+        $flight_edit = Flight::find($id);                        
+
+        return view('flight.edit')->with('flight_edit', $flight_edit);
+    }
+
+    public function update(Request $request)
+    {
+        $flight = Flight::find($request->input('id')); 
+
+        $departure_time = DateTime::createFromFormat('d-m-Y H:i', $request->input('departure'))->format('Y-m-d H:i');
+        $departure_time .= ':00'; 
+       
+        $arrival_time = DateTime::createFromFormat('d-m-Y H:i', $request->input('arrival'))->format('Y-m-d H:i');
+        $arrival_time .= ':00';  
+
+        $flight->flight_code = $request->input('code');
+        $flight->flight_source = $request->input('source');
+        $flight->flight_destination = $request->input('destination');
+        $flight->capacity = $request->input('capacity');
+        $flight->departure_time = $departure_time;
+        $flight->arrival_time = $arrival_time;
+        $flight->price = $request->input('price');
+        
+        $flight->save();
+
+        return redirect('home')->with('update', 'berhasil diubah');
+    }
+
+    public function destroy($id)
+    {
+        $flight = Flight::findOrFail($id);
+
+        $flight->delete();
+
+        return redirect('home')->with('delete', 'berhasil dihapus');;
     }
 }

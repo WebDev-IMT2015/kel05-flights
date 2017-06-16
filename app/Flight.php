@@ -17,4 +17,14 @@ class Flight extends Model
         'arrival_time',
         'price'
     ];
+
+     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'departure_time',
+        'arrival_time'
+    ];
 }

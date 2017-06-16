@@ -16,20 +16,20 @@
         </tr>
         @forelse($users as $user)
             <tr>
-                <td class="col-md-4">{{$user->name}}</td>
+                <td class="col-md-4">{{ $user->name }}</td>
                 <td class="col-md-4">
                     @foreach($user->roles as $role)
-                        {{$role->display_name}}
+                        {{ $role->display_name }}
                     @endforeach
 
                 </td>
                 <td class="col-md-4"><a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary">Edit</a>
 
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal-{{$user->id}}">Delete</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal-{{ $user->id }}">Delete</button>
 
                 <!-- Modal -->
-                <div id="myModal-{{$user->id}}" class="modal fade" role="dialog">
+                <div id="myModal-{{ $user->id }}" class="modal fade" role="dialog">
                   <div class="modal-dialog">
 
                     <!-- Modal content-->
@@ -39,7 +39,7 @@
                         <h4 class="modal-title">Delete Account</h4>
                       </div>
                       <div class="modal-body">
-                      <form action="{{ route('user.delete', $user->id) }}" method="POST" id="user-form-{{$user->id}}">
+                      <form action="{{ route('user.delete', $user->id) }}" method="POST" id="user-form-{{ $user->id }}">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                         <div class="alert alert-danger" role="alert">
@@ -52,7 +52,7 @@
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         
-                        <button type="submit" class="btn btn-danger" onclick="$('#user-form-{{$user->id}}').submit()">Delete</button>
+                        <button type="submit" class="btn btn-danger" onclick="$('#user-form-{{ $user->id }}').submit()">Delete</button>
                       </div>
                     </div>
 

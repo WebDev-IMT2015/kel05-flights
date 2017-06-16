@@ -30,6 +30,9 @@ Route::get('/flight', function () {
 });
 Route::get('/flight/list', 'FlightController@index');
 Route::post('/flight/store', 'FlightController@store')->name('flight.create');
+Route::get('/flight/{id}/edit', 'FlightController@edit')->name('flight.edit');
+Route::post('/flight/edit', 'FlightController@update')->name('flight.update');
+Route::delete('flight/delete/{id}', 'FlightController@destroy')->name('flight.delete');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
