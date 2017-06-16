@@ -25,5 +25,11 @@ Route::get('/list/{id}/edit', 'UserController@edit')->name('user.edit');
 Route::post('list/edit', 'UserController@update')->name('user.update');
 Route::delete('list/delete/{id}', 'UserController@destroy')->name('user.delete');
 
+Route::get('/flight', function () {
+    return view('flight.new');
+});
+Route::get('/flight/list', 'FlightController@index');
+Route::post('/flight/store', 'FlightController@store')->name('flight.create');
+
 Route::get('/home', 'HomeController@index')->name('home');
 

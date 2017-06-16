@@ -36,7 +36,7 @@
             <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
 
-            <!-- Dropdown-->
+            <!-- Dropdown User-->
             <li class="panel panel-default" id="dropdown">
                 <a data-toggle="collapse" href="#dropdown-lvl1">
                     <span class="glyphicon glyphicon-user"></span> User <span class="caret"></span>
@@ -48,6 +48,23 @@
                         <ul class="nav navbar-nav">
                             <li><a href="{{ url('register') }}">Create New User</a></li>
                             <li><a href="{{ url('list') }}">Edit/Delete User</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Dropdown Flight-->
+            <li class="panel panel-default" id="dropdown">
+                <a data-toggle="collapse" href="#dropdown-lvl2">
+                    <span class="glyphicon glyphicon-plane"></span> Flight <span class="caret"></span>
+                </a>
+
+                <!-- Dropdown level 1 -->
+                <div id="dropdown-lvl2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('flight') }}">Create New Flight</a></li>
+                            <li><a href="{{ url('flight/list') }}">Edit/Delete Flight</a></li>
                         </ul>
                     </div>
                 </div>
