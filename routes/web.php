@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('auth/login');
-});
+})->middleware('guest');
 
 Route::get('/role', 'RoleController@index');
 Route::post('/role', 'RoleController@store');
