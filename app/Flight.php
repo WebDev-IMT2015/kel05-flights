@@ -27,4 +27,10 @@ class Flight extends Model
         'departure_time',
         'arrival_time'
     ];
+
+    public function tickets() 
+    {
+        return $this->hasMany('Ticket');
+    }
+
 }
