@@ -70,6 +70,23 @@
                 </div>
             </li>
 
+            <!-- Dropdown Ticket-->
+            <li class="panel panel-default" id="dropdown">
+                <a data-toggle="collapse" href="#dropdown-lvl3">
+                    <span class="glyphicon glyphicon-book"></span> Ticket <span class="caret"></span>
+                </a>
+
+                <!-- Dropdown level 1 -->
+                <div id="dropdown-lvl3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('ticket') }}">Create New Ticket</a></li>
+                            <li><a href="{{ url('ticket/list') }}">Delete Ticket</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
 
             <li><li>
                                         <a href="{{ route('logout') }}"

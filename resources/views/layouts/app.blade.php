@@ -87,6 +87,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script src="{{ asset('js/datetimepicker.js') }}"></script>
     <script src="{{ asset('js/sidebar.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-formhelpers-phone.js') }}"></script>
 
 </body>
 </html>
