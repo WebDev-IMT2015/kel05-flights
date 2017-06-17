@@ -35,7 +35,7 @@ Route::post('/flight/edit', 'FlightController@update')->name('flight.update');
 Route::delete('flight/delete/{id}', 'FlightController@destroy')->name('flight.delete');
 
 Route::get('/ticket', function () {
-    return view('ticket.new');
+    return view('ticket.list');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
