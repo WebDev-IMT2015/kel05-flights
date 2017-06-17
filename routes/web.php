@@ -34,9 +34,10 @@ Route::get('/flight/{id}/edit', 'FlightController@edit')->name('flight.edit');
 Route::post('/flight/edit', 'FlightController@update')->name('flight.update');
 Route::delete('flight/delete/{id}', 'FlightController@destroy')->name('flight.delete');
 
-Route::get('/ticket', function () {
-    return view('ticket.list');
-});
+Route::get('/ticket', 'TicketController@index');
+Route::post('/ticket/store', 'TicketController@store')->name('ticket.create');
+Route::get('/ticket/list', 'TicketController@display')->name('ticket.list');
+Route::delete('ticket/delete/{id}', 'TicketController@destroy')->name('ticket.delete');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

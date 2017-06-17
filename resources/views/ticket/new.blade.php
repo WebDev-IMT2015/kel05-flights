@@ -10,19 +10,19 @@
             <div class="panel panel-default">
                 <div class="panel-heading">E-Ticket</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('flight.create') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('ticket.create') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="code" class="col-md-4 control-label">Nama</label>
+                            <label for="name" class="col-md-4 control-label">Nama</label>
 
                             <div class="col-md-6">
-                                <input id="code" type="text" class="form-control" name="code" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="code" class="col-md-4 control-label">Address</label>
+                            <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" required>
@@ -33,7 +33,7 @@
                             <label for="phone" class="col-md-4 control-label">Phone Number</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="input-medium bfh-phone" data-format="+62 (ddd) ddd-dddd">
+                                <input id="phone" type="tel" class="form-control input-medium bfh-phone" data-format="+62 (ddd) ddd-dddddddddddddddd" name="phone" required>
                             </div>
                         </div> 
                         
@@ -41,7 +41,7 @@
                             <label for="ktp" class="col-md-4 control-label">KTP / Passport Number</label>
 
                             <div class="col-md-6">
-                                <input type="number" class="form-control" name="ktp" />
+                                <input id="ktp" type="number" class="form-control" name="ktp" pattern="[0-9]"/ required>
                             </div>
                         </div>
 
@@ -49,10 +49,10 @@
                             <label for="code" class="col-md-4 control-label">Flight Code</label>
 
                             <div class="col-md-6">
-                                <select id="source" class="form-control" name="code">
-                                    <option value="jakarta">mix</option>
-                                    <option value="surabaya">max</option>
-                                    <option value="palembang">mex</option>
+                                <select id="code" class="form-control" name="code">
+                                @foreach($flights as $flight)
+                                    <option value="{{ $flight->id }}">{{ $flight->flight_code}} {{ $flight->flight_source }}-{{ $flight->flight_destination }} {{ $flight->departure_time->format('d-m-Y H:i') }}-{{ $flight->arrival_time->format('d-m-Y H:i') }}</option>
+                                @endforeach
                                 </select>
                             </div>
                         </div> 

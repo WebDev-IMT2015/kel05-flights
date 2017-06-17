@@ -10,12 +10,13 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>id</th>
+            <th>Id</th>
             <th>Pasengger</th>
             <th>Address</th>
             <th>Phone Number</th>
             <th>KTP / Pasport Number</th>
-            <th>ticket Code</th>
+            <th>Ticket Code</th>
+            <th>Action</th>
         </tr>
         @forelse($tickets as $ticket)
             <tr>
@@ -25,11 +26,10 @@
                 <td class="col-md-4">{{ $ticket->buyer_phone }}</td>
                 <td class="col-md-4">{{ $ticket->buyer_ktp_passport }}</td>
                 <td class="col-md-4">{{ $ticket->flight_id }}</td>
+                <td class="col-md-4"><a href="#" class="btn btn-success"><span class="glyphicon glyphicon-print"></span> Print </a><br><br>
                 
-
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal-{{ $ticket->id }}">Delete</button>
-                <a href="#" onclick="window.print()">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal-{{ $ticket->id }}"> Delete </button>
 
                 <!-- Modal -->
                 <div id="myModal-{{ $ticket->id }}" class="modal fade" role="dialog">
@@ -61,6 +61,7 @@
 
                   </div>
                 </div>
+                </td>
             </tr>
             @empty
             <td>no ticket</td>

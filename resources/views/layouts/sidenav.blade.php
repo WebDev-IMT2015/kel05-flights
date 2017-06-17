@@ -32,10 +32,6 @@
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
 
-            <li><a href="#"><span class="glyphicon glyphicon-send"></span> Link</a></li>
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
-
             <!-- Dropdown User-->
             <li class="panel panel-default" id="dropdown">
                 <a data-toggle="collapse" href="#dropdown-lvl1">
@@ -81,24 +77,28 @@
                     <div class="panel-body">
                         <ul class="nav navbar-nav">
                             <li><a href="{{ url('ticket') }}">Create New Ticket</a></li>
-                            <li><a href="{{ url('ticket/list') }}">Delete Ticket</a></li>
+                            <li><a href="{{ url('ticket/list') }}">Print/Delete Ticket</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
 
+            <li>
+                <a href="#"><span class="glyphicon glyphicon-file"></span> Sales Report </a>
+            </li>
 
-            <li><li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            <span class="glyphicon glyphicon-off"></span>Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li> </li>
+            <li>
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <span class="glyphicon glyphicon-off"></span>Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}  
+                    </form>
+                </li> 
+            </li>
 
         </ul>
     </div><!-- /.navbar-collapse -->

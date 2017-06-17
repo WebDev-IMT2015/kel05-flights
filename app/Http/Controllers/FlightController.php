@@ -92,6 +92,6 @@ class FlightController extends Controller
 
         $flight->delete();
 
-        return redirect('home')->with('delete', 'berhasil dihapus');;
+        return redirect('home')->with('delete', 'berhasil dihapus');
     }
 }

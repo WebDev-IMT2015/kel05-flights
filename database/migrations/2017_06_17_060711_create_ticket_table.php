@@ -19,7 +19,7 @@ class CreateTicketTable extends Migration
             $table->string('buyer_name');
             $table->string('buyer_address');
             $table->string('buyer_phone');
-            $table->integer('buyer_ktp_passport');
+            $table->string('buyer_ktp_passport');
             $table->integer('flight_id')->unsigned();
             $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
             $table->timestamps();

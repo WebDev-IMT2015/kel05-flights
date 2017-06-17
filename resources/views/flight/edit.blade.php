@@ -27,10 +27,10 @@
                             <label for="code" class="col-md-4 control-label">Flight Source</label>
 
                             <div class="col-md-6">
-                                <select id="source" class="form-control" name="source" value="{{ $flight_edit->flight_source }}">
-                                    <option value="jakarta">Jakarta</option>
-                                    <option value="surabaya">Surabaya</option>
-                                    <option value="palembang">Palembang</option>
+                                <select id="source" class="form-control" name="source">
+                                    <option value="jakarta" @if(isset($flight_edit) && $flight_edit->flight_source == "jakarta") selected @endif>Jakarta</option>
+                                    <option value="surabaya" @if(isset($flight_edit) && $flight_edit->flight_source == "surabaya") selected @endif>Surabaya</option>
+                                    <option value="palembang" @if(isset($flight_edit) && $flight_edit->flight_source == "palembang") selected @endif>Palembang</option>
                                 </select>
                             </div>
                         </div>
@@ -39,10 +39,10 @@
                             <label for="code" class="col-md-4 control-label">Flight Destination</label>
 
                             <div class="col-md-6">
-                                <select id="destination" class="form-control" name="destination" value="{{ $flight_edit->flight_destination }}">
-                                    <option value="jakarta">Jakarta</option>
-                                    <option value="surabaya">Surabaya</option>
-                                    <option value="palembang">Palembang</option>
+                                <select id="destination" class="form-control" name="destination">
+                                    <option value="jakarta" @if(isset($flight_edit) && $flight_edit->flight_destination == "jakarta") selected @endif>Jakarta</option>
+                                    <option value="surabaya" @if(isset($flight_edit) && $flight_edit->flight_destination == "surabaya") selected @endif>Surabaya</option>
+                                    <option value="palembang" @if(isset($flight_edit) && $flight_edit->flight_destination == "palembang") selected @endif>Palembang</option>
                                 </select>
                             </div>
                         </div>
@@ -68,9 +68,6 @@
                                 </span>
                             </div>
                         </div>
-    
-
-
                         
                         <div class="form-group">
                             <label for="capacity" class="col-md-4 control-label">Capacity</label>

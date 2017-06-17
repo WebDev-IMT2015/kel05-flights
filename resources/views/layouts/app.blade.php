@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
-   
+    <link href="{{ asset('css/numberbox.css') }}" rel="stylesheet">
     
 </head>
 <body>
@@ -88,6 +88,6 @@
     <script src="{{ asset('js/datetimepicker.js') }}"></script>
     <script src="{{ asset('js/sidebar.js') }}"></script>
     <script src="{{ asset('js/bootstrap-formhelpers-phone.js') }}"></script>
-
+    <script src="{{ asset('js/number.js') }}"></script>
 </body>
 </html>

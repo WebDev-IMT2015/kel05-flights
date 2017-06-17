@@ -18,7 +18,7 @@ class Ticket extends Model
 
     public function flights() 
     {
-    	return $this->belongsTo('Flight');
+    	return $this->belongsTo('App\Flight');
     }
 
 

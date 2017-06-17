@@ -14,7 +14,7 @@
             <th>Roles</th>
             <th>Action</th>
         </tr>
-        @forelse($users as $user)
+        @foreach($users as $user)
             <tr>
                 <td class="col-md-4">{{ $user->name }}</td>
                 <td class="col-md-4">
@@ -23,10 +23,10 @@
                     @endforeach
 
                 </td>
-                <td class="col-md-4"><a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary">Edit</a>
+                <td class="col-md-4"><a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary"> Edit </a><br><br>
 
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal-{{ $user->id }}">Delete</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal-{{ $user->id }}"> Delete </button>
 
                 <!-- Modal -->
                 <div id="myModal-{{ $user->id }}" class="modal fade" role="dialog">
@@ -59,14 +59,9 @@
                   </div>
                 </div>
             </tr>
-            @empty
-            <td>no users</td>
-
-        @endforelse
+        @endforeach
     </table>
       </div>
     </div>
     </div>
-
-
 @endsection
