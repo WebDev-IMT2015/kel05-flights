@@ -51,8 +51,6 @@ class UserController extends Controller
             $user->attachRole(Role::where('name','costumer-service')->first());
         }
 
-
-
         return redirect('home');
 	}
 

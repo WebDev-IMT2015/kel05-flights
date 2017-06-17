@@ -12,8 +12,11 @@
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/numberbox.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -75,9 +78,16 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/sidebar.js') }}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
 
+    
+    <!-- <script src="http://code.jquery.com/jquery.js"></script>-->
+    
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/moment-with-locales.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="{{ asset('js/datetimepicker.js') }}"></script>
+    <script src="{{ asset('js/sidebar.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-formhelpers-phone.js') }}"></script>
+    <script src="{{ asset('js/number.js') }}"></script>
 </body>
 </html>
