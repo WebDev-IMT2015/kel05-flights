@@ -84,7 +84,7 @@
             </li>
 
             <li>
-                <a href="#"><span class="glyphicon glyphicon-file"></span> Sales Report </a>
+                <a href="{{ url('salesreport') }}"><span class="glyphicon glyphicon-file"></span> Sales Report </a>
             </li>
 
             <li>

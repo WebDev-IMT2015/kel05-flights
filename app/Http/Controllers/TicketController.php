@@ -15,12 +15,12 @@ class TicketController extends Controller
     {
         $flights_store = new Collection;
         $flights_store_full = new Collection;
-        $flights=Flight::all();
+        $flights = Flight::all();
         
-        $tickets=DB::table('tickets')
-                 ->select('flight_id', DB::raw('count(flight_id) as total'))
-                 ->groupBy('flight_id')
-                 ->get();
+        $tickets = DB::table('tickets')
+                   ->select('flight_id', DB::raw('count(flight_id) as total'))
+                   ->groupBy('flight_id')
+                   ->get();
 
         foreach ($flights as $flight) 
         {
@@ -48,7 +48,9 @@ class TicketController extends Controller
             $flights_store->push($diff);
         }
 
-        return view('ticket.new')->with('flights', $flights_store);
+        $sorted_flights_store = $flights_store->sortBy('id');
+
+        return view('ticket.new')->with('flights', $sorted_flights_store);
     }
      
     public function store(Request $request)

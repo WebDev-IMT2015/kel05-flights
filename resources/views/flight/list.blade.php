@@ -10,7 +10,7 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>Id</th>
+            <th>No.</th>
             <th>Flight Code</th>
             <th>Flight Source</th>
             <th>Flight Destination</th>
@@ -22,10 +22,10 @@
         </tr>
         @foreach($flights as $flight)
             <tr>
-                <td class="col-md-4">{{ $flight->id }}</td>
+                <td class="col-md-1">{{ $loop->iteration }}</td>
                 <td class="col-md-4">{{ $flight->flight_code }}</td>
-                <td class="col-md-4">{{ $flight->flight_source }}</td>
-                <td class="col-md-4">{{ $flight->flight_destination }}</td>
+                <td class="col-md-4">{{ ucfirst($flight->flight_source) }}</td>
+                <td class="col-md-4">{{ ucfirst($flight->flight_destination) }}</td>
                 <td class="col-md-4">{{ $flight->departure_time->format('d-m-Y H:i') }}</td>
                 <td class="col-md-4">{{ $flight->arrival_time->format('d-m-Y H:i') }}</td>
                 <td class="col-md-4">{{ $flight->capacity }}</td>
