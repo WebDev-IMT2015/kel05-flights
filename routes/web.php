@@ -15,14 +15,15 @@ Route::get('/', function () {
     return view('auth/login');
 })->middleware('guest');
 
-Route::get('/role', 'RoleController@index');
-Route::post('/role', 'RoleController@store');
 
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
 	Route::post('/register', 'Auth\RegisterController@register');
+
+	Route::get('/role', 'RoleController@index');
+	Route::post('/role', 'RoleController@store');
 
 	Route::get('/list', 'UserController@index');
 	Route::get('/list/{id}/edit', 'UserController@edit')->name('user.edit');

@@ -12,7 +12,7 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-         $role=[
+        $role=[
                [
                    'name' => 'admin',
                    'display_name' => 'Admin',
@@ -24,11 +24,11 @@ class RoleTableSeeder extends Seeder
                    'description' => 'Sell Things'
                ]
 
-       ];
+        ];
 
 
         foreach ($role as $key=>$value){
-        	Role::create($value);
+        	 Role::create($value);
         }
     }
 }
