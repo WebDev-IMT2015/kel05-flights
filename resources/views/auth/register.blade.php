@@ -69,7 +69,7 @@
                                     <input id="member" type="radio" name="member" value="admin">Admin
                                 </label><br>
                                 <label>
-                                    <input id="member" type="radio" name="member" value="cs">Customer Service
+                                    <input id="member" type="radio" name="member" value="cs" checked>Customer Service
                                 </label>
                             </div>
                         </div>

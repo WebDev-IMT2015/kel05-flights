@@ -22,8 +22,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">E-Ticket</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('ticket.create') }}">
-                        {{ csrf_field() }}
+                    <form class="form-horizontal" role="form">
 
                             <div class="col-xs-6 col-sm-8 col-md-11" id="print-area-1">
                                 <h1>Flight E-ticket</h1>
@@ -39,12 +38,12 @@
                                         <p>Booking reference no (PNR):</p>
                                     </div>
                                     <div class="col-xs-4 col-sm-2 col-md-4">
-                                        <label>TJSALC</label>
+                                        <label>{{ $flight->flight_code }}</label>
                                     </div>
                                     <div class="col-xs-2 col-sm-2 col-md-2">
                                         <p>Issued date:</p>
                                     </div>
-                                        <p>Monday, 28 Jun, 2017</p>
+                                        <p>{{ $ticket->created_at->format('l, j F, Y') }}</p>
                                 </div>
 
                                 &nbsp;
@@ -58,28 +57,28 @@
                                     <div class="col-xs-6 col-sm-2 col-md-2">
                                         <p>Name : </p>
                                     </div>
-                                        <p>Achmad Rinaldi Ratu</p>
+                                        <p>{{ $ticket->buyer_name }}</p>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-xs-6 col-sm-2 col-md-2">
                                         <p>Address :</p>
                                     </div>
-                                        <p>Sambikerep - Made selatan</p>
+                                        <p>{{ $ticket->buyer_address }}</p>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-xs-6 col-sm-2 col-md-2">
                                         <p>Phone Number:</p>
                                     </div>
-                                        <p>082342434435</p>
+                                        <p>{{ $ticket->buyer_phone }}</p>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-xs-6 col-sm-2 col-md-2">
                                         <p>KTP / Passport Number :</p>
                                     </div>
-                                        <p>2423423432234</p>
+                                        <p>{{ $ticket->buyer_ktp_passport }}</p>
                                 </div>
 
                                 <div class="form-group">
@@ -110,19 +109,19 @@
                                 <!-- Flight Peronal Identity -->
                                 <div class="form-group">
                                     <div class="col-xs-3 col-sm-2 col-md-3">
-                                        <p>TJSALC</p>
+                                        <p>{{ $flight->flight_code }}</p>
                                     </div>
 
                                     <div class="col-xs-3 col-sm-2 col-md-3">
-                                        <p>Jakarta</p>
-                                        <p>28 Jun 2017</p>
-                                        <p>20:00 hrs</p>
+                                        <p>{{ ucfirst($flight->flight_source) }}</p>
+                                        <p>{{ $flight->departure_time->format('d-m-Y') }}</p>
+                                        <p>{{ $flight->departure_time->format('H:i') }} hrs</p>
                                     </div>
 
                                     <div class="col-xs-3 col-sm-2 col-md-3">
-                                        <p>Padang</p>
-                                        <p>28 Jun 2017</p>
-                                        <p>22:00 hrs</p>
+                                        <p>{{ ucfirst($flight->flight_destination) }}</p>
+                                        <p>{{ $flight->arrival_time->format('d-m-Y') }}</p>
+                                        <p>{{ $flight->arrival_time->format('H:i') }} hrs</p>
                                     </div>
 
                                     <div class="col-xs-3 col-sm-2 col-md-3">
@@ -158,7 +157,7 @@
                             </div>
                             <!-- END -->
                         <div class="form-group">
-                            <a href="#" id="print" onclick="javascript:printDiv('print-area-1')">print</a>
+                            <a href="#" id="print" onclick="javascript:printDiv('print-area-1')"><span class="glyphicon glyphicon-print"></span> Print </a>
                         </div>
 
                     </form>
