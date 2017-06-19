@@ -73,7 +73,7 @@
                             <label for="capacity" class="col-md-4 control-label">Capacity</label>
 
                             <div class="col-md-6">
-                                <input type="number" value="{{ $flight_edit->capacity }}" min="1" max="900" step="1" class="form-control" name="capacity" />
+                                <input type="number" value="{{ $flight_edit->capacity }}" min="1" max="900" step="1" class="form-control" name="capacity" required/>
                             </div>
                         </div> 
 
@@ -81,7 +81,7 @@
                             <label for="price" class="col-md-4 control-label">Price</label>
 
                             <div class="col-md-6">
-                                <input type="number" value="{{ $flight_edit->price }}" min="1" max="100000000000000000" step="1" class="form-control" name="price" />
+                                <input type="number" value="{{ $flight_edit->price }}" min="1" max="100000000000000000" step="1" class="form-control" name="price" required/>
                             </div>
                         </div> 
                         

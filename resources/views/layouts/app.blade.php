@@ -43,7 +43,6 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -69,6 +68,8 @@
                                 </ul>
                             </li>
                         @endif
+
+                   
                     </ul>
                 </div>
             </div>
@@ -89,5 +90,6 @@
     <script src="{{ asset('js/sidebar.js') }}"></script>
     <script src="{{ asset('js/bootstrap-formhelpers-phone.js') }}"></script>
     <script src="{{ asset('js/number.js') }}"></script>
+    <script src="{{ asset('js/print.js') }}"></script>
 </body>
 </html>

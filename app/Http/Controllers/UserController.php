@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+          $this->middleware('role:admin');
+    }
+    
     public function index()
     {
         $users=User::all();

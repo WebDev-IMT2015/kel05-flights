@@ -29,9 +29,8 @@
              <!--/Display area after sidenav-->
              <div class="container-fluid">
         <div class="side-body">
-           <h1> Main Content here </h1>
-           <pre> Resize the screen to view the left slide menu </pre>
-           <H1>THIS IS MAIN AREA</H1>         
+           <h1> Welcome {{ Auth::user()->name }} </h1>
+           <pre> Current Date: {{ date('l , j F Y') }} </pre>  
         </div>
     </div>
     </div>
