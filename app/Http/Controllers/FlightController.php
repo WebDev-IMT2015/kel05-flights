@@ -8,10 +8,20 @@ use DateTime;
 
 class FlightController extends Controller
 {
+    public function __construct()
+    {
+          $this->middleware('role:admin');
+    }
+
     public function index()
     {
         $flights=Flight::all();
         return view('flight.list')->with('flights', $flights);
+    }
+
+    public function showNewFlightForm()
+    {
+        return view('flight.new');
     }
      
     public function store(Request $request)

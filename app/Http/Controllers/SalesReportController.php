@@ -11,6 +11,11 @@ use App\Flight;
 
 class SalesReportController extends Controller
 {
+    public function __construct()
+    {
+          $this->middleware('role:admin');
+    }
+    
     public function index()
     {
     	$sold_flights = DB::table('tickets')

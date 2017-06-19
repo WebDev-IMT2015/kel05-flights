@@ -11,6 +11,11 @@ use App\Flight;
 
 class TicketController extends Controller
 {
+    public function __construct()
+    {
+          $this->middleware('role:costumer-service');
+    }
+
     public function index()
     {
         $flights_store = new Collection;

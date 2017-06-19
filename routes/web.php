@@ -29,9 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('list/edit', 'UserController@update')->name('user.update');
 	Route::delete('list/delete/{id}', 'UserController@destroy')->name('user.delete');
 
-	Route::get('/flight', function () {
-	    return view('flight.new');
-	});
+	Route::get('/flight', 'FlightController@showNewFlightForm');
 	Route::get('/flight/list', 'FlightController@index');
 	Route::post('/flight/store', 'FlightController@store')->name('flight.create');
 	Route::get('/flight/{id}/edit', 'FlightController@edit')->name('flight.edit');
