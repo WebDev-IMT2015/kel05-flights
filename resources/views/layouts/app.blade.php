@@ -65,5 +65,6 @@
     <script src="{{ asset('js/sidebar.js') }}"></script>
     <script src="{{ asset('js/bootstrap-formhelpers-phone.js') }}"></script>
     <script src="{{ asset('js/number.js') }}"></script>
+    <script src="{{ asset('js/print.js') }}"></script>
 </body>
 </html>
