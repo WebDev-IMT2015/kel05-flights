@@ -39,6 +39,10 @@ Route::post('/ticket/store', 'TicketController@store')->name('ticket.create');
 Route::get('/ticket/list', 'TicketController@display')->name('ticket.list');
 Route::delete('ticket/delete/{id}', 'TicketController@destroy')->name('ticket.delete');
 
+Route::get('/print', function () {
+    return view('ticket.print');
+});
+
 Route::get('/salesreport', 'SalesReportController@index');
 Route::get('/salesreport/{id}/detail', 'SalesReportController@detail')->name('report.detail');
 
