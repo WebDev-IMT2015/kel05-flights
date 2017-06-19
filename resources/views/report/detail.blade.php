@@ -8,10 +8,10 @@
         <div class="col-md-8 col-md-offset-4">
         <h3>Flight {{ $flight->flight_code }}</h3>
         <h4>From {{ ucfirst($flight->flight_source) }} to {{ ucfirst($flight->flight_destination) }}</h4>
-        <h4>Depart at {{ $flight->departure_time->format('d-m-Y H:i') }}</h4>
-        <h4>Arrive at{{ $flight->arrival_time->format('d-m-Y H:i') }}</h4>
-        <h4>Capacity : {{ $flight->capacity }}</h4>
-        <h4>Price : {{ $flight->price }}</h4>
+        <h4>Depart at {{ $flight->departure_time->format('l , j F Y H:i') }}</h4>
+        <h4>Arrive at {{ $flight->arrival_time->format('l , j F Y H:i') }}</h4>
+        <h4>Capacity : {{ $flight->capacity }} seats</h4>
+        <h4>Price : Rp {{ number_format($flight->price,0,",",".") }},-</h4>
 
         <table class="table table-bordered">
             <tr>

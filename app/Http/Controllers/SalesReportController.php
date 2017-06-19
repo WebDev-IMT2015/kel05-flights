@@ -22,6 +22,8 @@ class SalesReportController extends Controller
                    ->select('flight_id', DB::raw('count(flight_id) as total'))
                    ->groupBy('flight_id')
                    ->get();
+
+        $all_flights = Flight::all();
         $flights = new Collection;
         $total_earnings = 0;
         $total_sales = 0;
@@ -49,8 +51,21 @@ class SalesReportController extends Controller
 
         }
 
+
+        $diffs = $all_flights->diff($flights);
+
+        foreach ($diffs as $diff) 
+        {
+            $diff->setAttribute('is_full', 'No');
+            $diff->setAttribute('earning', '0');
+            $diff->setAttribute('sold', '0');
+            $flights->push($diff);
+        }
+
+        $sorted_flights = $flights->sortBy('id');
+
         return view('report.list')
-        ->with('flights', $flights)
+        ->with('flights', $sorted_flights)
         ->with('total_earnings', $total_earnings)
         ->with('total_sales', $total_sales);
     }
