@@ -10,12 +10,14 @@
 
     <table class="table table-bordered">
         <tr>
+            <th>No.</th>
             <th>Name</th>
             <th>Roles</th>
             <th>Action</th>
         </tr>
         @foreach($users as $user)
             <tr>
+                <td class="col-md-1">{{ $loop->iteration }}</td>
                 <td class="col-md-4">{{ $user->name }}</td>
                 <td class="col-md-4">
                     @foreach($user->roles as $role)
