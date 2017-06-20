@@ -92,6 +92,7 @@ class TicketController extends Controller
     public function printMe($id)
     {
         $ticket = Ticket::findOrFail($id);
+        $idf = $ticket->flight_id;
         $flight = Flight::findOrFail($ticket->flight_id);
 
         return view('ticket.print')->with('ticket', $ticket)->with('flight', $flight);
