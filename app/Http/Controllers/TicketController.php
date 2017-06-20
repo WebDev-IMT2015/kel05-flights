@@ -11,6 +11,11 @@ use App\Flight;
 
 class TicketController extends Controller
 {
+    public function __construct()
+    {
+          $this->middleware('role:costumer-service');
+    }
+
     public function index()
     {
         $flights_store = new Collection;
@@ -65,7 +70,7 @@ class TicketController extends Controller
 
         $flight->tickets()->save($ticket);
 
-        return redirect('home')->with('success', 'berhasil ditambahkan');
+        return view('ticket.print')->with('ticket', $ticket)->with('flight', $flight);
     }
 
     public function display()
@@ -82,5 +87,13 @@ class TicketController extends Controller
         $ticket->delete();
 
         return redirect('home')->with('delete', 'berhasil dihapus');
+    }
+
+    public function printMe($id)
+    {
+        $ticket = Ticket::findOrFail($id);
+        $flight = Flight::findOrFail($ticket->flight_id);
+
+        return view('ticket.print')->with('ticket', $ticket)->with('flight', $flight);
     }
 }

@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label for="code" class="col-md-4 control-label">Departure Time</label>
 
-                            <div class='col-md-6 input-group date' id='datetimepicker6'>
+                            <div class='input-group date pad' id='datetimepicker6'>
                                 <input type='text' class="form-control" name="departure" value="{{ $flight_edit->departure_time->format('d-m-Y H:i') }}"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
@@ -61,7 +61,7 @@
                         <div class="form-group">
                             <label for="code" class="col-md-4 control-label">Arrival Time</label>
 
-                            <div class='col-md-6 input-group date' id='datetimepicker7'>
+                            <div class='input-group date pad' id='datetimepicker7'>
                                 <input type='text' class="form-control" name="arrival" value="{{ $flight_edit->arrival_time->format('d-m-Y H:i') }}"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
@@ -73,7 +73,7 @@
                             <label for="capacity" class="col-md-4 control-label">Capacity</label>
 
                             <div class="col-md-6">
-                                <input type="number" value="{{ $flight_edit->capacity }}" min="1" max="900" step="1" class="form-control" name="capacity" />
+                                <input type="number" value="{{ $flight_edit->capacity }}" min="1" max="900" step="1" class="form-control" name="capacity" required/>
                             </div>
                         </div> 
 
@@ -81,7 +81,7 @@
                             <label for="price" class="col-md-4 control-label">Price</label>
 
                             <div class="col-md-6">
-                                <input type="number" value="{{ $flight_edit->price }}" min="1" max="100000000000000000" step="1" class="form-control" name="price" />
+                                <input type="number" value="{{ $flight_edit->price }}" min="1" max="100000000000000000" step="1" class="form-control" name="price" required/>
                             </div>
                         </div> 
                         

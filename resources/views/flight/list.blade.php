@@ -29,7 +29,7 @@
                 <td class="col-md-4">{{ $flight->departure_time->format('d-m-Y H:i') }}</td>
                 <td class="col-md-4">{{ $flight->arrival_time->format('d-m-Y H:i') }}</td>
                 <td class="col-md-4">{{ $flight->capacity }}</td>
-                <td class="col-md-4">{{ $flight->price }}</td>
+                <td class="col-md-4">Rp {{ number_format($flight->price,0,",",".") }},-</td>
                 
                 <td class="col-md-4"><a href="{{ route('flight.edit', $flight->id) }}" class="btn btn-primary"> Edit </a><br><br>
 

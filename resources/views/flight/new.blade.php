@@ -48,8 +48,8 @@
                         <div class="form-group">
                             <label for="code" class="col-md-4 control-label">Departure Time</label>
 
-                            <div class='col-md-6 input-group date' id='datetimepicker6'>
-                                <input type='text' class="form-control" name="departure"/>
+                            <div class='input-group date pad' id='datetimepicker6'>
+                                <input type='text' class="form-control" name="departure" required/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -59,8 +59,8 @@
                         <div class="form-group">
                             <label for="code" class="col-md-4 control-label">Arrival Time</label>
 
-                            <div class='col-md-6 input-group date' id='datetimepicker7'>
-                                <input type='text' class="form-control" name="arrival"/>
+                            <div class='input-group date pad' id='datetimepicker7'>
+                                <input type='text' class="form-control" name="arrival" required/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -74,7 +74,7 @@
                             <label for="capacity" class="col-md-4 control-label">Capacity</label>
 
                             <div class="col-md-6">
-                                <input type="number" value="10" min="1" max="900" step="1" class="form-control" name="capacity" />
+                                <input type="number" value="10" min="1" max="900" step="1" class="form-control" name="capacity" required/>
                             </div>
                         </div> 
 
@@ -82,7 +82,7 @@
                             <label for="price" class="col-md-4 control-label">Price</label>
 
                             <div class="col-md-6">
-                                <input type="number" value="100000" min="1" max="100000000000000000" step="1" class="form-control" name="price" />
+                                <input type="number" value="100000" min="1" max="100000000000000000" step="1" class="form-control" name="price" required/>
                             </div>
                         </div> 
                         
