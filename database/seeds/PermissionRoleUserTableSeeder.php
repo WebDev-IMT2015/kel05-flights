@@ -90,19 +90,19 @@ class PermissionRoleUserTableSeeder extends Seeder
         $permission13->name = 'report-view';
         $permission13->display_name = 'View Report';
         $permission13->description = 'View Sales Report';
-        $permission1->save();
+        $permission13->save();
 
         $admin = new Role;
-        $role1->name = 'admin';
-        $role1->display_name = 'Admin';
-        $role1->description = 'Manage Things';
-        $role1->save();
+        $admin->name = 'admin';
+        $admin->display_name = 'Admin';
+        $admin->description = 'Manage Things';
+        $admin->save();
 
         $cs = new Role;
-        $role2->name = 'costumer-service';
-        $role2->display_name = 'Costumer Service';
-        $role2->description = 'Sell Things';
-        $role2->save();
+        $cs->name = 'costumer-service';
+        $cs->display_name = 'Costumer Service';
+        $cs->description = 'Sell Things';
+        $cs->save();
 
         $user = new User;
         $user->name = 'Admin';

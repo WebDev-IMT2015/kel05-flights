@@ -157,7 +157,7 @@
                             </div>
                             <!-- END -->
                         <div class="form-group">
-                            <a href="#" id="print" onclick="javascript:printDiv('print-area-1')"><span class="glyphicon glyphicon-print"></span> Print </a>
+                            <a href="#" id="print" onclick="javascript:printDiv('print-area-1')" class="btn btn-success"><span class="glyphicon glyphicon-print"></span></a>
                         </div>
 
                     </form>

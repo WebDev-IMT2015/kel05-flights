@@ -70,8 +70,6 @@ class TicketController extends Controller
 
         $flight->tickets()->save($ticket);
 
-        $this->printMe($flight, $ticket);
-
         return view('ticket.print')->with('ticket', $ticket)->with('flight', $flight);
     }
 
