@@ -8,7 +8,7 @@
     <div class="col-md-8 col-md-offset-4">
     <h3>Users</h3>
 
-    <table class="table table-bordered">
+    <table class="table">
         <tr>
             <th>No.</th>
             <th>Name</th>

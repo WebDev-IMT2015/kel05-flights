@@ -9,7 +9,7 @@
     <h3>Sales Report</h3>
     <h4>Total Earnings : Rp {{ number_format($total_earnings,0,",",".") }},-</h4>
     <h4>Total Ticket Sales : {{ $total_sales }} seats</h4>
-    <table class="table table-bordered">
+    <table class="table">
         <tr>
             <th>No.</th>
             <th>Flight Code</th>
